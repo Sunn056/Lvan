@@ -15,6 +15,22 @@ header img {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+#informacion-lavado {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+#informacion-lavado h2 {
+    color: #333;
+}
+
+#informacion-lavado ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
 
 .aviso-flotante {
     position: fixed;
