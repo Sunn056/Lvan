@@ -1,39 +1,65 @@
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #f4f4f9;
     color: #333;
 }
 
-/* Encabezado con logo y barra azul */
-header {
-    background-color: #007bff; /* Azul */
-    color: white;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+/* Estilos para la imagen del logo */
+header img {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo */
-header img {
-    height: 50px; /* Ajusta el tamaño del logo */
-    margin-left: 15px;
+.aviso-flotante {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ffcc00; /* Amarillo para resaltar */
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* Menú de navegación */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 nav ul {
     list-style: none;
+    padding: 0;
     display: flex;
-    gap: 20px;
-    margin-right: 20px;
+    justify-content: center;
+    margin: 0;
 }
 
 nav ul li {
-    display: inline;
+    margin: 0 15px;
 }
 
 nav ul li a {
@@ -49,70 +75,56 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 
-/* Aviso de apertura */
-#aviso-apertura {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background: linear-gradient(90deg, #ffcc00, #ff8800);
-    color: #000;
-    padding: 15px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Sección de información */
-#informacion-lavado {
-    background-color: #fff;
-    padding: 20px;
-    margin: 60px auto;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
-    animation: slideUp 1s ease-in-out;
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-#informacion-lavado h2 {
-    color: #444;
+.section {
+    padding: 40px 20px;
     text-align: center;
-    font-size: 22px;
 }
 
-#informacion-lavado h3 {
-    color: #ff8800;
+.servicios-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
-#informacion-lavado ul li::before {
-    content: '✅'; /* Icono verde */
-    font-size: 18px;
+.servicio {
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 🚫 Íconos de cancel para la ropa NO permitida */
-#informacion-lavado ul li.no-aceptada::before {
-    content: '❌'; /* Icono rojo */
+.servicio:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para la sección de contacto y ubicación */
+#info-contacto, #info-ubicacion {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#info-contacto p, #info-ubicacion p {
+    margin: 10px 0;
+}
+
+#info-contacto a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#info-contacto a:hover {
+    text-decoration: underline;
+}
+
+iframe {
+    margin-top: 20px;
+    border-radius: 10px;
 }
