@@ -15,22 +15,89 @@ header img {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-#informacion-lavado {
-    background-color: #f4f4f4;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 5px;
-}
-
-#informacion-lavado h2 {
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
     color: #333;
 }
 
-#informacion-lavado ul {
-    list-style-type: disc;
-    margin-left: 20px;
+/* Aviso de apertura */
+#aviso-apertura {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(90deg, #ffcc00, #ff8800);
+    color: #000;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Sección de información */
+#informacion-lavado {
+    background-color: #fff;
+    padding: 20px;
+    margin: 60px auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+    animation: slideUp 1s ease-in-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#informacion-lavado h2 {
+    color: #444;
+    text-align: center;
+    font-size: 22px;
+}
+
+#informacion-lavado h3 {
+    color: #ff8800;
+}
+
+#informacion-lavado ul {
+    list-style: none;
+    padding: 0;
+}
+
+#informacion-lavado ul li {
+    background: url('https://img.icons8.com/color/48/000000/checkmark.png') left center no-repeat;
+    background-size: 20px;
+    padding-left: 30px;
+    margin: 5px 0;
+}
+
+#informacion-lavado ul li:nth-child(even) {
+    background: url('https://img.icons8.com/fluency/48/000000/cancel.png') left center no-repeat;
+    background-size: 20px;
+}
 
 .aviso-flotante {
     position: fixed;
