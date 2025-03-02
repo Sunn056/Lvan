@@ -107,15 +107,6 @@ nav ul li a:hover {
     color: #ff8800;
 }
 
-/* ✅ Íconos de check para ropa permitida */
-#informacion-lavado ul li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 5px 0;
-    list-style: none; /* Elimina los puntos de la lista */
-}
-
 #informacion-lavado ul li::before {
     content: '✅'; /* Icono verde */
     font-size: 18px;
