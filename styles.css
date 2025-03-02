@@ -82,21 +82,23 @@ body {
     color: #ff8800;
 }
 
-#informacion-lavado ul {
-    list-style: none;
-    padding: 0;
-}
-
 #informacion-lavado ul li {
-    background: url('https://img.icons8.com/color/48/000000/checkmark.png') left center no-repeat;
-    background-size: 20px;
-    padding-left: 30px;
-    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 0;
 }
 
-#informacion-lavado ul li:nth-child(even) {
-    background: url('https://img.icons8.com/fluency/48/000000/cancel.png') left center no-repeat;
-    background-size: 20px;
+/* ✅ Íconos de check para la ropa permitida */
+#informacion-lavado ul li::before {
+    content: url('https://img.icons8.com/color/48/000000/checkmark.png'); /* Icono verde */
+    width: 20px;
+    height: 20px;
+}
+
+/* 🚫 Íconos de cancel para la ropa NO permitida */
+#informacion-lavado ul li.no-aceptada::before {
+    content: url('https://img.icons8.com/fluency/48/000000/cancel.png'); /* Icono rojo */
 }
 
 .aviso-flotante {
