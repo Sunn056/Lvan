@@ -29,7 +29,14 @@ header img {
     z-index: 1000;
     animation: fadeIn 1s ease-in-out;
 }
-
+/* Ajustes para celulares */
+@media (max-width: 768px) {
+    #aviso-apertura {
+        font-size: 14px;
+        padding: 8px 15px;
+        top: 5px; /* Mueve el aviso más arriba */
+    }
+}
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -115,16 +122,61 @@ nav ul li a:hover {
     margin: 10px 0;
 }
 
-#info-contacto a {
+#redes-sociales {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#redes-sociales a {
+    margin: 0 10px;
     color: #007bff;
     text-decoration: none;
 }
 
-#info-contacto a:hover {
-    text-decoration: underline;
+#redes-sociales i {
+    transition: transform 0.3s ease;
+}
+
+#redes-sociales a:hover i {
+    transform: scale(1.2);
 }
 
 iframe {
     margin-top: 20px;
     border-radius: 10px;
+}
+#informacion-lavado {
+    background-color: #fff;
+    padding: 20px;
+    margin: 40px auto;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+#informacion-lavado h2 {
+    color: #007bff;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#informacion-lavado h3 {
+    color: #ff8800;
+    margin-top: 15px;
+}
+
+#informacion-lavado ul {
+    list-style: none;
+    padding: 0;
+}
+
+#informacion-lavado ul li {
+    font-size: 16px;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
