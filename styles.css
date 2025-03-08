@@ -9,7 +9,8 @@ body {
 
 /* Estilos para el logo */
 header img {
-    width: 200px;
+    width: 100%;
+    max-width: 200px; /* Limitar el tamaño del logo */
     height: auto;
     margin-right: 20px;
     border-radius: 10px;
@@ -66,7 +67,6 @@ header img {
 .aviso-flotante {
     animation: fadeInOut 8s ease-in-out;
 }
-
 
 /* Estilos del encabezado */
 header {
@@ -152,7 +152,7 @@ nav ul li a:hover {
     font-size: 24px;
     color: #007bff;
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease; /* Aseguramos transición de color y tamaño */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 /* Colores y efectos para iconos de redes sociales */
@@ -184,7 +184,7 @@ nav ul li a:hover {
 /* Efecto de aumento de tamaño al pasar el mouse */
 #redes-sociales a:hover {
     transform: scale(1.3); /* Aumenta el tamaño al pasar el mouse */
-    transition: transform 0.3s ease-in-out; /* Aplicar suavizado en el efecto */
+    transition: transform 0.3s ease-in-out, color 0.3s ease;
 }
 
 /* Estilos para el iframe del mapa */
@@ -234,5 +234,15 @@ iframe {
     #informacion-lavado ul li {
         font-size: 14px;
         display: block;
+    }
+
+    .servicios-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .servicio {
+        width: 90%;
+        margin: 10px 0;
     }
 }
