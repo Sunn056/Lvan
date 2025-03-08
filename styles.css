@@ -7,7 +7,7 @@ body {
     color: #333;
 }
 
-/* Estilos para la imagen del logo */
+/* Estilos para el logo */
 header img {
     width: 200px;
     height: auto;
@@ -16,12 +16,11 @@ header img {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.aviso-flotante {
+/* Aviso flotante en la parte superior derecha */
+.aviso-flotante, #aviso-apertura {
     position: fixed;
     top: 20px;
     right: 20px;
-    background-color: #ffcc00; /* Amarillo para resaltar */
-    color: #333;
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: bold;
@@ -29,34 +28,57 @@ header img {
     z-index: 1000;
     animation: fadeIn 1s ease-in-out;
 }
-/* Ajustes para celulares */
+
+/* Estilos específicos para el aviso de apertura */
+#aviso-apertura {
+    background: linear-gradient(90deg, #ffcc00, #ff8800);
+    color: #000;
+    font-size: 14px;
+    padding: 15px 20px;
+}
+
 @media (max-width: 768px) {
     #aviso-apertura {
+        top: 5px;
         font-size: 14px;
-        padding: 8px 15px;
-        top: 5px; /* Mueve el aviso más arriba */
+        padding: 10px 15px;
     }
 }
-@keyframes fadeIn {
-    from {
+
+@keyframes fadeInOut {
+    0% {
         opacity: 0;
         transform: translateY(-10px);
     }
-    to {
+    10% {
         opacity: 1;
         transform: translateY(0);
     }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.aviso-flotante {
+    animation: fadeInOut 8s ease-in-out;
 }
 
 
+/* Estilos del encabezado */
 header {
     background-color: #007bff;
     color: white;
-    padding: 20px;
+    padding: 100px 20px 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
+/* Estilos de la navegación */
 nav ul {
     list-style: none;
     padding: 0;
@@ -82,11 +104,13 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 
+/* Sección general */
 .section {
     padding: 40px 20px;
     text-align: center;
 }
 
+/* Estilos para los servicios */
 .servicios-container {
     display: flex;
     justify-content: space-around;
@@ -95,7 +119,7 @@ nav ul li a:hover {
 }
 
 .servicio {
-    background: rgb(255, 255, 255);
+    background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -109,7 +133,7 @@ nav ul li a:hover {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos para la sección de contacto y ubicación */
+/* Estilos para las secciones de contacto y ubicación */
 #info-contacto, #info-ubicacion {
     margin-top: 20px;
     padding: 20px;
@@ -122,29 +146,56 @@ nav ul li a:hover {
     margin: 10px 0;
 }
 
-#redes-sociales {
-    text-align: center;
-    margin-top: 20px;
-}
-
+/* Estilos para los iconos de redes sociales */
 #redes-sociales a {
     margin: 0 10px;
+    font-size: 24px;
     color: #007bff;
     text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease; /* Aseguramos transición de color y tamaño */
 }
 
-#redes-sociales i {
-    transition: transform 0.3s ease;
+/* Colores y efectos para iconos de redes sociales */
+#redes-sociales .fa-facebook {
+    color: #000;
 }
 
-#redes-sociales a:hover i {
-    transform: scale(1.2);
+#redes-sociales .fa-whatsapp {
+    color: #000;
 }
 
+#redes-sociales .fa-envelope {
+    color: #000;
+}
+
+/* Cambio de color cuando el cursor está sobre el icono */
+#redes-sociales .fa-facebook:hover {
+    color: #0d6efd;
+}
+
+#redes-sociales .fa-whatsapp:hover {
+    color: #09e02d;
+}
+
+#redes-sociales .fa-envelope:hover {
+    color: #dd1811;
+}
+
+/* Efecto de aumento de tamaño al pasar el mouse */
+#redes-sociales a:hover {
+    transform: scale(1.3); /* Aumenta el tamaño al pasar el mouse */
+    transition: transform 0.3s ease-in-out; /* Aplicar suavizado en el efecto */
+}
+
+/* Estilos para el iframe del mapa */
 iframe {
-    margin-top: 20px;
-    border-radius: 10px;
+    width: 90%;
+    height: 400px;
+    min-height: 300px;
+    border: 10px solid #000;
 }
+
+/* Estilos para la sección de información de lavado */
 #informacion-lavado {
     background-color: #fff;
     padding: 20px;
@@ -169,14 +220,19 @@ iframe {
 }
 
 #informacion-lavado ul {
-    list-style: none;
-    padding: 0;
+    padding-left: 20px;
 }
 
 #informacion-lavado ul li {
-    font-size: 16px;
-    padding: 8px 0;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    #informacion-lavado ul li {
+        font-size: 14px;
+        display: block;
+    }
 }
