@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 /* Estilos generales */
 body {
     font-family: 'Poppins', sans-serif;
@@ -17,6 +18,7 @@ header img {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 /* Aviso flotante en la parte superior derecha */
 .aviso-flotante, #aviso-apertura {
     position: fixed;
@@ -32,7 +34,7 @@ header img {
 
 /* Estilos específicos para el aviso de apertura */
 #aviso-apertura {
-    background: linear-gradient(90deg, #ffcc00, #ff8800);
+    background: linear-gradient(90deg, #f7d139, #f1b306);
     color: #000;
     font-size: 14px;
     padding: 15px 20px;
@@ -66,6 +68,7 @@ header img {
 
 .aviso-flotante {
     animation: fadeInOut 8s ease-in-out;
+    background: linear-gradient(90deg, #f7d139, #f1b306);
 }
 
 /* Estilos del encabezado */
@@ -76,6 +79,13 @@ header {
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
+}
+ul {
+    list-style-position: inside;
+    line-height: 1.6; /* Mejora la legibilidad */
+    padding: 15px;
+    background: #f0f6fa;
+    border-radius: 8px;
 }
 
 /* Estilos de la navegación */
@@ -92,7 +102,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: rgb(11, 48, 150);
     text-decoration: none;
     font-weight: bold;
     padding: 10px 15px;
@@ -101,7 +111,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #0056b3;
+    background-color: #fcda19;
 }
 
 /* Sección general */
