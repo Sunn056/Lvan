@@ -1,7 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Ocultar el aviso después de 8 segundos
+    // Ocultar el aviso después de 8 segundos con animación fade
     setTimeout(() => {
-        document.getElementById('aviso')?.style.setProperty("display", "none");
+        const aviso = document.getElementById('aviso');
+        if (aviso) {
+            aviso.style.transition = "opacity 0.5s";
+            aviso.style.opacity = "0";
+            setTimeout(() => {
+                aviso.style.display = "none"; // Se oculta después de la animación
+            }, 500);
+        }
     }, 8000);
 
     // Interactividad para los enlaces del menú con desplazamiento suave
@@ -15,24 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-
     // Interacción con los servicios para mostrar detalles
     document.querySelectorAll(".servicio").forEach(servicio => {
         servicio.addEventListener("click", function () {
+            // Alternar la clase activo solo para el servicio clickeado
+            this.classList.toggle("activo");
+            // Cerrar los otros servicios
             document.querySelectorAll(".servicio").forEach(s => {
-                if (s !== this) s.classList.remove("activo"); // Cierra los otros servicios
-            });
-            this.classList.toggle("activo"); // Muestra u oculta el actual
-        });
-    });
-    document.addEventListener("DOMContentLoaded", function () {
-        const servicios = document.querySelectorAll(".servicio");
-    
-        servicios.forEach(servicio => {
-            servicio.addEventListener("click", function () {
-                this.classList.toggle("activo"); // Alternar solo el contenido interno
+                if (s !== this) s.classList.remove("activo");
             });
         });
     });
-    
 });
